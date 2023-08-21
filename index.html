@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script defer src="script/main.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <section class="join">
+        <div class="inner">
+            <h1>MEMBERSHIP</h1>
+            <form action="result.html" method="get" id="member">
+                <!-- method는 데이터를 백엔드쪽으로 보내는 방식 => 백엔드개발자가 
+    정해주는 방식으로 변경해야합니다
+action은 해당 form태그를 최종적으로 보내는 페이지, 보통은 
+회원가입 축하 페이지나, 메인페이지 -->
+                <fieldset>
+                    <!-- fieldset은 form태그의 구성요소로 단락이라고 보면됩니다 -->
+                    <legend class="hidden">회원가입 폼 입력 양식</legend>
+                    <!-- (section태그에는 h1태그를 = 권장) fieldset태그에는 legend태그를,
+ table에는 caption태그를 반드시 작성해야 합니다 -->
+                    <table>
+                        <caption class="hidden">회원가입을 위한 아이디, 비밀번호
+                            이메일, 성별, 학력, 취미, 남기는말 입력 테이블
+                        </caption>
+
+                        <tbody>
+                            <!-- 유저 아이디 -->
+                            <tr>
+                                <th scope="row"><label for="userid">User ID</label></th>
+                                <!-- for속성이란?? 라벨태그에서 input태그와 연결하는 속성
+                            라벨태그란 사용자에게 어떤 입력필드(input태그)에 어떤 종류의
+                            정보를 입력해야 하는지 설명, 안내하는 태그입니다  -->
+                                <td>
+                                    <input type="text" name="userid" id="userid" placeholder="id는 최소5글자를 입력해주세요">
+                                    <!-- label태그의 for속성과 input태그의 id속성을 반드시 일치되야한다
+                            name 속성은 input요소의 이름을 정의하는 것으로 form태그의 정보를
+                            서버로 제출할 때 이 name속성을 기반으로 전송이됩니다, 즉 백엔드
+                            개발자에게 보내지는 내용이 됩니다 -->
+                                </td>
+                            </tr>
+                            <!-- password -->
+                            <tr>
+                                <th scope="row"><label for="pwd1">Password</label></th>
+                                <td>
+                                    <input type="password" name="pwd1" id="pwd1" placeholder="비밀번호를 입력해주세요">
+                                    <div id="toggleBtn"></div>
+                                </td>
+                            </tr>
+                            <!-- Re password -->
+                            <tr>
+                                <th scope="row"><label for="pwd2">Re Password</label></th>
+                                <td>
+                                    <input type="password" name="pwd2" id="pwd2" placeholder="비밀번호를 재입력해주세요">
+                                </td>
+                            </tr>
+                            <!-- 이메일 -->
+                            <tr>
+                                <th scope="row"><label for="email">E-mail</label></th>
+                                <td>
+                                    <input type="text" name="email" id="email" placeholder="@를 포함한 이메일을 작성해주세요">
+                                </td>
+                            </tr>
+                            <!-- 최종학력 -->
+                            <tr>
+                                <th scope="row"><label for="education">Education</label></th>
+                                <td>
+                                    <select name="education" id="education">
+                                        <option value="">선택하세요</option>
+                                        <option value="elementary school">초등학교졸업</option>
+                                        <option value="middle school">중학교졸업</option>
+                                        <option value="high school">고등학교졸업</option>
+                                        <option value="college">대학교졸업</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <!-- 성별 -->
+                            <tr>
+                                <th scope="row">Gender</th>
+                                <td>
+                                    <label for="male">Male</label>
+                                    <input type="radio" name="gender" id="male" value="male">
+                                    <label for="female">Female</label>
+                                    <input type="radio" name="gender" id="female" value="female">
+                                </td>
+                            </tr>
+                            <!-- 취미 -->
+                            <tr>
+                                <th scope="row">Interests</th>
+                                <td>
+                                    <label for="reading">Reading</label>
+                                    <input type="checkbox" name="hobby" id="reading" value="reading">
+
+                                    <label for="music">Music</label>
+                                    <input type="checkbox" name="hobby" id="music" value="music">
+
+                                    <label for="study">Study</label>
+                                    <input type="checkbox" name="hobby" id="study" value="study">
+
+                                    <label for="game">Game</label>
+                                    <input type="checkbox" name="hobby" id="game" value="game">
+                                </td>
+                            </tr>
+                            <!-- 남기는 말 -->
+                            <tr>
+                                <th scope="row"><label for="comments">Comments</label></th>
+                                <td>
+                                    <textarea name="comments" id="comments"
+                                        placeholder="남기는 말을 20글자 이상 작성해주세요"></textarea>
+                                </td>
+                            </tr>
+                            <!-- 버튼 -->
+                            <tr>
+                                <th colspan="2">
+                                    <input type="reset" value="취소">
+                                    <input type="submit" value="제출">
+                                </th>
+                            </tr>
+                        </tbody>
+                    </table>
+                </fieldset>
+            </form>
+        </div>
+    </section>
+</body>
+
+</html>
